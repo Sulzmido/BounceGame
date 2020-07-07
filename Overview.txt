@@ -1,0 +1,44 @@
+Bounce Game.
+
+	Bounce Game is a game with multiple levels.
+All the level data is initiallly loaded in by the Level class
+and is stored in an array of ArrayLists.
+
+	The TileManager class access this ArrayLists based on
+which level is currently playing and converts the level's
+ArrayList data into a 2D Array data for easy accessiblilty
+and manipulation.
+
+	The BackgroundManager handles the background image wraparound
+whose movestep is unique to other moving entities.
+
+	The Game class co-ordinates all the game entities and
+uses FSEM(Full Screen Exclusive Mode) and also handles input.
+It also has the 'big' method for level transition.
+
+	The Ballsprite class handles the ball. the move step of the ball
+is the same as the move step of the tile map. This makes tile wraparound
+and ball positioning in tile map calculation easier.
+
+	The work of a statechart on the ballsprite class is obvious 
+from its update() method.
+
+	The ImageManager class handles ImageLoading and PlayMusic 
+class handles WAV and MIDI audio loading using constants to differentiate
+the audio formats internally.
+
+	The Obstacles class observes the level's 2D array data and 
+inits obstacles based on it. The char 'o' represent a tile where
+an obstacle should be. The obstacles are animated with the star
+images. The obstacles are also drawn with the help of TileManager.
+
+	The Tile class defines a tile object and gives it different
+qualities.    
+
+	The movement coding of the ball does not make controlling
+the ball "smooth" while the game is being played. The movement which
+was roughly implemented by a statechart could be improved a lot more.
+But i think making the bounce game is taking too much of my time, so
+im leaving the movement as it is. 
+
+   Pretty much all there is to this side scroller. :=)
